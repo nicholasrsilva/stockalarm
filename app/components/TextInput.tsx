@@ -7,14 +7,16 @@ interface TIProps extends TextInputProps {}
 
 export const TextInputStandard = (props: TIProps) => {
   const {style, ...rest} = props;
-  return <TextInput {...rest} style={[style, styles.ti]} />;
+  //console.log(style, 'Style Props');
+
+  return <TextInput {...rest} style={[styles.ti, style]} />;
 };
 
 const styles = StyleSheet.create({
   ti: {
     //borderWidth: 1,
     height: 40,
-    padding: 6,
+    padding: 5,
     borderRadius: 5,
     //borderColor: COLORS.grey,
     backgroundColor: COLORS.grey,

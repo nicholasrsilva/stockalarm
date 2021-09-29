@@ -21,6 +21,7 @@ import {
 } from '../../components/Images';
 import {TextInputStandard} from '../../components/TextInput';
 import {TopGradient} from '../../components/TopGradient';
+import {useState} from 'react';
 
 interface CardProps {
   image: any;
@@ -38,9 +39,15 @@ const StockCard = (props: CardProps) => {
 };
 
 export const Register = ({navigation}: any) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   function onRegister() {
     navigation.navigate('Alarm Type');
   }
+  
+  
   return (
     <SafeAreaView style={styles.main}>
       <View style={{width: '80%', flexDirection: 'row', alignItems: 'center'}}>
@@ -63,7 +70,11 @@ export const Register = ({navigation}: any) => {
           <View style={styles.col}>
             <View style={{width: '45%'}}>
               <Text>Email</Text>
-              <TextInputStandard />
+              <TextInputStandard
+                autoCapitalize="none"
+                value={username}
+                onChangeText={setUsername}
+              />
             </View>
             <View style={{width: '45%'}}>
               <Text>Phone Number</Text>
@@ -74,6 +85,14 @@ export const Register = ({navigation}: any) => {
             <View style={{width: '45%'}}>
               <Text>Birthday</Text>
               <TextInputStandard />
+            </View>
+            <View style={{width: '45%'}}>
+              <Text>Password</Text>
+              <TextInputStandard
+                value={password}
+                secureTextEntry
+                onChangeText={setPassword}
+              />
             </View>
           </View>
           <View style={{width: '80%', marginTop: '5%'}}>

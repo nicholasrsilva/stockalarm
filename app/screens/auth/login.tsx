@@ -14,6 +14,9 @@ import {TextInputStandard} from '../../components/TextInput';
 import {TopGradient} from '../../components/TopGradient';
 
 export const Login = ({navigation}: any) => {
+  function onLogin() {
+    navigation.navigate('Alarm Type');
+  }
   return (
     <SafeAreaView style={styles.main}>
       <View style={{width: '90%', flexDirection: 'row', alignItems: 'center'}}>
@@ -31,7 +34,7 @@ export const Login = ({navigation}: any) => {
         <TextInputStandard autoCapitalize="none" autoCorrect={false} />
         <Text style={styles.field}>Password</Text>
         <TextInputStandard secureTextEntry />
-        <ButtonStandard title="Login" />
+        <ButtonStandard title="Login" onPress={onLogin} />
       </View>
       <View style={{width: '80%', bottom: 20, position: 'absolute'}}>
         <Text style={{marginBottom: 10}}>Don't have an account?</Text>

@@ -54,7 +54,8 @@ export const StockPrice = ({navigation}: any) => {
       </View>
       <View style={{width: '70%', alignItems: 'flex-start', marginTop: '10%'}}>
         <Text style={[styles.h2, {fontSize: 24}]}>Feeling ambitious?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Profit Simulator')}>
           <Text style={[styles.h2, {fontSize: 18, color: COLORS.blue_d}]}>
             Check your profit simulator
           </Text>
@@ -88,7 +89,9 @@ export const StockPrice = ({navigation}: any) => {
             Top Alarms
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.menu}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Settings')}
+          style={styles.menu}>
           <Text style={{fontSize: 24, maxWidth: 100, textAlign: 'center'}}>
             Settings
           </Text>
